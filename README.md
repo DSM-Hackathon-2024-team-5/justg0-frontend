@@ -1,1 +1,1 @@
-# justg0-frontend
+# justgo-frontend
