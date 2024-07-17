@@ -4,6 +4,7 @@ import SignUp from "./pages/signup";
 import Main from "./pages/main";
 import Trip from "./pages/trip";
 import TripDetail from "./pages/tripDetails";
+import Term from "./pages/term";
 
 export const Router = () => {
   return (
@@ -14,6 +15,7 @@ export const Router = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/trip" element={<Trip />} />
         <Route path="/tripDetail" element={<TripDetail />} />
+        <Route path="/term" element={<Term />} />
       </Routes>
     </BrowserRouter>
   );
