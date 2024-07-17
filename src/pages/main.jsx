@@ -8,7 +8,8 @@ import Google from "../assets/google.svg"
 const Main = () => {
   return <Container>
       <TitleField src={JustGo} />
-      <Buttons>
+        <ButtonField>
+        <Buttons>
         <AppleButton>
           <AppleLogo src={Apple} />
           애플 계정으로 시작하기
@@ -28,6 +29,7 @@ const Main = () => {
           구글 계정으로 시작하기
         </GoogleButton>
       </Buttons2>
+      </ButtonField>
     </Container>
 };
 
@@ -50,20 +52,30 @@ const TitleField = styled.img`
   margin-top: 33%;
 `;
 
-const Buttons = styled.div`
+const ButtonField = styled.div`
+  margin-top: 103%;
+  width: 100%;
   height: 20%;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+`;
+
+const Buttons = styled.div`
+  height: 50%;
   width: 100%;
   display: flex;
-  margin-top: 99%;
+  align-items: center;
+  position: absolute;
+  margin-bottom: 20%;
 `;
 
 const AppleButton = styled.button`
   width: 55%;
-  height: 30%;
+  height: 60%;
   margin-left: 4%;
   border-radius: 10px;
   border: none;
-  margin-top: 12%;
   font-size: .9em;
   display: flex;
   align-items: center;
@@ -79,8 +91,7 @@ const AppleLogo = styled.img`
 
 const LoginButton = styled.button`
   width: 27%;
-  height: 30%;
-  margin-top: 12%;
+  height: 60%;
   margin-left: 4%;
   border-radius: 10px;
   border: none;
@@ -98,18 +109,18 @@ const LoginLogo = styled.img`
 `;
 
 const Buttons2 = styled.div`
-  height: 10%;
+  height: 50%;
   width: 100%;
-  margin-top: -20%;
   display: flex;
   align-items: center;
+  position: absolute;
 `;
 
 const SignUpButton = styled.button`
   background-color: #FF6DD6;
   color: white;
   width: 30%;
-  height: 57%;
+  height: 60%;
   margin-top: 1%;
   margin-left: 4%;
   border-radius: 10px;
@@ -120,6 +131,7 @@ const SignUpButton = styled.button`
   padding-left: 4%;
   font-size: .9em;
   cursor: pointer;
+  margin-bottom: 8%;
 `;
 
 const WhiteLogin = styled.img`
@@ -127,8 +139,8 @@ const WhiteLogin = styled.img`
 `;
 
 const GoogleButton = styled.button`
-  width: 56%;
-  height: 57%;
+  width: 57%;
+  height: 60%;
   margin-top: 1%;
   border-radius: 10px;
   border: none;
@@ -136,9 +148,12 @@ const GoogleButton = styled.button`
   text-align: center;
   font-size: .9em;
   cursor: pointer;
+  margin-bottom: 8%;
+  display: flex;
+  align-items: center;
 `;
 
 const GoogleLogo = styled.img`
   margin-right: 9%;
-  margin-bottom: -2%;
+  margin-left: 3%;
 `;
