@@ -72,8 +72,8 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   margin: auto;
-  color: ${props => (props.$primary ? 'white' : '#FF6DD6')};
-  background-color: ${props => (props.$primary ? '#FF6DD6' : '#ffffff')};
+  color: ${({theme, $primary}) => ($primary ? theme.color.white : theme.color.mainDarken)};
+  background-color: ${({theme, $primary}) => ($primary ? theme.color.mainDarken : theme.color.white)};
   font-size: 14px;
   margin-top: -20px;
 

@@ -19,7 +19,8 @@ const Header = styled.div`
 `;
 
 const Img = styled.img`
-  padding-left: 10px;
+  padding-right: 10px;
+  left-padding: ${props => (props.$open ? '50px' : '100px')};
 `
 
 const Title = styled.div`
@@ -72,9 +73,8 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   margin: auto;
-  color: ${props => (props.$primary ? 'white' : '#FF6DD6')};
-  background-color: ${props => (props.$primary ? '#FF6DD6' : '#ffffff')};
-  font-size: 14px;
+  color: ${({theme, $primary}) => ($primary ? theme.color.white : theme.color.mainDarken)};
+  background-color: ${({theme, $primary}) => ($primary ? theme.color.mainDarken : theme.color.white)};
   margin-top: -40px;
 
   &:hover {
@@ -99,6 +99,8 @@ function Signup() {
         </InputContainer>
         <InputContainer id="password">
           <Input type="password" placeholder="비밀번호를 입력해주세요" />
+          <Img $open src="/images/Vector.svg" alt="open" id='open'/>
+          <Img $open src="/images/eye.svg" alt="closed" id='closed'/>
         </InputContainer>
         <InputContainer id="password">
           <Input type="text" placeholder="닉네임을 입력해주세요" />
