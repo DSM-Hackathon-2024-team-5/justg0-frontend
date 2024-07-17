@@ -70,8 +70,7 @@ const Head2 = styled.div`
 `;
 
 const Head2Text = styled.span`
-  font-size: 1.7em;
-  font-weight: 540;
+  ${({ theme }) => theme.font.headLine}
 `;
 
 const MapField = styled.div`
@@ -106,7 +105,7 @@ const DetailTitle = styled.div`
 `;
 
 const DetailTitleText = styled.span`
-  font-size: 1.1em;
+  ${({ theme }) => theme.font.title}
 `;
 
 const DetailContent = styled.div`
@@ -116,9 +115,7 @@ const DetailContent = styled.div`
 `;
 
 const DetailContentText = styled.p`
-  font-size: 1em;
-  text-align: justify;
-  line-height: 1.3em;
+  ${({ theme }) => theme.font.body}
 `;
 
 const Info = styled.div`
@@ -139,7 +136,7 @@ const InfoTitle = styled.div`
 `;
 
 const InfoTitleText = styled.span`
-  font-size: 1.07em;
+  ${({ theme }) => theme.font.title}
 `;
 
 const Distance = styled.div`
@@ -148,10 +145,12 @@ const Distance = styled.div`
   flex-direction: column;
 `;
 
-const Dis = styled.span``;
+const Dis = styled.span`
+  ${({ theme }) => theme.font.body}
+`;
 
 const Num = styled.span`
-  font-size: 1.7em;
+  ${({ theme }) => theme.font.headLine}
 `;
 
 const StartTime = styled.div`
