@@ -7,16 +7,9 @@ import map from "/images/map.svg";
 const TripDetail = () => {
   return (
     <Container>
-      <HeadField>
-        <Head1>
-          <Move src={move} />
-          <Head1Text>보문산 보문대</Head1Text>
-          <Heart src={heart} />
-        </Head1>
-        <Head2>
-          <Head2Text>24.7km 이동!</Head2Text>
-        </Head2>
-      </HeadField>
+      <Head2>
+        <Head2Text>24.7km 이동!</Head2Text>
+      </Head2>
       <MapField>
         <Map src={map} />
       </MapField>
@@ -57,45 +50,20 @@ const TripDetail = () => {
 export default TripDetail;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-  background-color: #c3b7b73e;
-`;
-
-const HeadField = styled.div`
-  width: 100%;
-  height: 13%;
-  background-color: #ffffff;
-`;
-
-const Head1 = styled.div`
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Move = styled.img`
-  width: 2%;
-  margin-left: 5%;
-`;
-
-const Heart = styled.img`
-  width: 6%;
-  margin-right: 3%;
-`;
-
-const Head1Text = styled.span`
-  font-size: 0.9em;
-  font-weight: 540;
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 const Head2 = styled.div`
   width: 100%;
-  height: 120px;
+  box-sizing: border-box;
+  padding: 32px 16px;
   display: flex;
   align-items: center;
   background-color: #ffffff;
@@ -104,49 +72,44 @@ const Head2 = styled.div`
 const Head2Text = styled.span`
   font-size: 1.7em;
   font-weight: 540;
-  margin-left: 3%;
 `;
 
 const MapField = styled.div`
   width: 100%;
-  height: 27%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 13%;
+  padding: 0 16px;
+  box-sizing: border-box;
 `;
 
 const Map = styled.img`
-  width: 95%;
-  margin-right: 1%;
+  width: 100%;
   border-radius: 5px;
 `;
 
 const Detail = styled.div`
   width: 100%;
-  height: 24%;
   display: flex;
   flex-direction: column;
+  padding: 16px;
+  gap: 8px;
   background-color: #ffffff;
+  box-sizing: border-box;
 `;
 
 const DetailTitle = styled.div`
   width: 100%;
-  height: 19%;
   display: flex;
   align-items: center;
 `;
 
 const DetailTitleText = styled.span`
-  margin-left: 3%;
   font-size: 1.1em;
-  margin-top: 1%;
 `;
 
 const DetailContent = styled.div`
-  width: 93%;
-  height: 84%;
-  margin-left: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,55 +122,46 @@ const DetailContentText = styled.p`
 `;
 
 const Info = styled.div`
-  margin-top: 4%;
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   width: 100%;
-  height: 26%;
+  padding: 16px;
+  gap: 8px;
+  box-sizing: border-box;
 `;
 
 const InfoTitle = styled.div`
   background-color: #ffffff;
   width: 100%;
-  height: 11%;
   display: flex;
   align-items: center;
 `;
 
 const InfoTitleText = styled.span`
-  margin-left: 3%;
   font-size: 1.07em;
 `;
 
 const Distance = styled.div`
   width: 100%;
-  height: 27%;
-  margin-top: 1%;
   display: flex;
   flex-direction: column;
 `;
 
-const Dis = styled.span`
-  margin-left: 3%;
-  margin-top: 1%;
-`;
+const Dis = styled.span``;
 
 const Num = styled.span`
   font-size: 1.7em;
-  margin-left: 3%;
 `;
 
 const StartTime = styled.div`
   width: 100%;
-  height: 27%;
-  margin-top: 1%;
   display: flex;
   flex-direction: column;
 `;
 
 const EndTime = styled.div`
   width: 100%;
-  height: 27%;
-  margin-top: 1%;
   display: flex;
   flex-direction: column;
 `;
