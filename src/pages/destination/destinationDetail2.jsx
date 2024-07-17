@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "../../components/button";
 import { Link } from "react-router-dom";
-import Character from "../../assets/character.svg";
+import Character from "/images/character.svg";
 
 const DestinationDetail2 = () => {
   return (

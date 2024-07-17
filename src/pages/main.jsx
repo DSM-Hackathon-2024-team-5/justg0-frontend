@@ -1,12 +1,13 @@
-import styled from "styled-components"
-import JustGo from "../assets/JustGO.svg"
-import Apple from "../assets/apple.svg"
-import login from "../assets/login.svg"
-import login2 from "../assets/whiteLogin.svg"
-import Google from "../assets/google.svg"
+import styled from "styled-components";
+import JustGo from "/images/JustGO.svg";
+import Apple from "/images/apple.svg";
+import login from "/images/login.svg";
+import login2 from "/images/whiteLogin.svg";
+import Google from "/images/google.svg";
 
 const Main = () => {
-  return <Container>
+  return (
+    <Container>
       <TitleField src={JustGo} />
       <Buttons>
         <AppleButton>
@@ -29,13 +30,14 @@ const Main = () => {
         </GoogleButton>
       </Buttons2>
     </Container>
+  );
 };
 
 export default Main;
 
 const Container = styled.div`
   height: 100vh;
-  background-image: url('src/assets/BRIDGE.svg');
+  background-image: url("/images/BRIDGE.svg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -64,7 +66,7 @@ const AppleButton = styled.button`
   border-radius: 10px;
   border: none;
   margin-top: 12%;
-  font-size: .9em;
+  font-size: 0.9em;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -84,12 +86,12 @@ const LoginButton = styled.button`
   margin-left: 4%;
   border-radius: 10px;
   border: none;
-  font-size: .9em;
+  font-size: 0.9em;
   display: flex;
   align-items: center;
   padding-left: 5%;
   cursor: pointer;
-  `;
+`;
 
 const LoginLogo = styled.img`
   width: 30%;
@@ -106,7 +108,7 @@ const Buttons2 = styled.div`
 `;
 
 const SignUpButton = styled.button`
-  background-color: #FF6DD6;
+  background-color: #ff6dd6;
   color: white;
   width: 30%;
   height: 57%;
@@ -114,11 +116,11 @@ const SignUpButton = styled.button`
   margin-left: 4%;
   border-radius: 10px;
   border: none;
-  font-size: .9em;
+  font-size: 0.9em;
   display: flex;
   align-items: center;
   padding-left: 4%;
-  font-size: .9em;
+  font-size: 0.9em;
   cursor: pointer;
 `;
 
@@ -134,7 +136,7 @@ const GoogleButton = styled.button`
   border: none;
   margin-left: 3%;
   text-align: center;
-  font-size: .9em;
+  font-size: 0.9em;
   cursor: pointer;
 `;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Character from "../../assets/character.svg";
+import Character from "/images/character.svg";
 import styled, { keyframes } from "styled-components";
 import { Button } from "../../components/button";
 import { Link } from "react-router-dom";
