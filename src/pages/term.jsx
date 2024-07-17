@@ -74,7 +74,7 @@ function App() {
         </TextInner>
       </Main>
       <ButtonBack>
-        <Button onClick={() => window.hi.postMessage("hi")}>동의하고 가입하기</Button>
+        <Button onClick={() => window.webview.hi("hi")}>동의하고 가입하기</Button>
       </ButtonBack>
     </Body>
   );
