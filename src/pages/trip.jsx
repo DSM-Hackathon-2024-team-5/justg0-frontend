@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Body = styled.div`
   background-color: rgb(245, 245, 245);
@@ -7,8 +7,10 @@ const Body = styled.div`
 `;
 
 const Title = styled.div`
+  display: flex;
+  align-items: center;
   background-color: white;
-  height: 200px;
+  height: 136px;
 
   img {
     width: 100vw;
@@ -17,10 +19,10 @@ const Title = styled.div`
   p {
     font-size: 28px;
     margin-left: 15px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     line-height: 40px;
   }
-    ${({theme, $bolder}) => ($bolder === theme.font.headLine)};
+  ${({ theme, $bolder }) => $bolder === theme.font.headLine};
 `;
 
 const TripRecord = styled.div`
@@ -66,7 +68,7 @@ const Record = styled.div`
     margin-left: 100px;
   }
 
-  #KM b{
+  #KM b {
     display: flex;
     justify-content: flex-start;
     float: left;
@@ -89,7 +91,6 @@ function App() {
   return (
     <Body>
       <Title>
-        <img src="/images/Group15.svg" alt="title logo" />
         <p $bolder>
           <b>
             지금까지 <span>1234.3km</span>
@@ -106,7 +107,7 @@ function App() {
           <h1>1</h1>
           <p>
             <b>
-            보문산 보문대
+              보문산 보문대
               <br />
               <span>2008.10.11</span>
             </b>
@@ -119,7 +120,7 @@ function App() {
           <h1>2</h1>
           <p>
             <b>
-            넘어 계룡
+              넘어 계룡
               <br />
               <span>2008.10.11</span>
             </b>
@@ -132,7 +133,7 @@ function App() {
           <h1>3</h1>
           <p>
             <b>
-            계룡을 넘어
+              계룡을 넘어
               <br />
               <span>2008.10.11</span>
             </b>
@@ -145,7 +146,7 @@ function App() {
           <h1>4</h1>
           <p>
             <b>
-            계룡을 넘어
+              계룡을 넘어
               <br />
               <span>2008.10.11</span>
             </b>
@@ -158,7 +159,7 @@ function App() {
           <h1>5</h1>
           <p>
             <b>
-            계룡을 넘어
+              계룡을 넘어
               <br />
               <span>2008.10.11</span>
             </b>
@@ -171,7 +172,7 @@ function App() {
           <h1>6</h1>
           <p>
             <b>
-            계룡을 넘어
+              계룡을 넘어
               <br />
               <span>2008.10.11</span>
             </b>
