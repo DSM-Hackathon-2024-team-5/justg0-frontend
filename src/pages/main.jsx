@@ -4,6 +4,7 @@ import Apple from "/images/apple.svg";
 import login from "/images/login.svg";
 import login2 from "/images/whiteLogin.svg";
 import Google from "/images/google.svg";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -14,14 +15,18 @@ const Main = () => {
           <AppleLogo src={Apple} />
           <span>애플 계정으로 시작하기</span>
         </AppleButton>
-        <LoginButton>
-          <span>로그인</span>
-          <LoginLogo src={login} />
-        </LoginButton>
-        <SignUpButton>
-          <span>가입하기</span>
-          <WhiteLogin src={login2} />
-        </SignUpButton>
+        <Link to="/login">
+          <LoginButton>
+            <span>로그인</span>
+            <LoginLogo src={login} />
+          </LoginButton>
+        </Link>
+        <Link to="/signup">
+          <SignUpButton>
+            <span>가입하기</span>
+            <WhiteLogin src={login2} />
+          </SignUpButton>
+        </Link>
         <GoogleButton>
           <GoogleLogo src={Google} />
           <span>구글 계정으로 시작하기</span>
