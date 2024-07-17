@@ -58,7 +58,6 @@ const TitleField = styled.img`
 
 const ButtonField = styled.div`
   margin-top: auto;
-  width: 347px;
   height: 112px;
   position: relative;
   display: flex;
