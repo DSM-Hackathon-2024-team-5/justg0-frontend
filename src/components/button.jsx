@@ -1,8 +1,28 @@
 import { forwardRef } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Button = ({ type = "solid", children }) => {
-  return <ButtonContainer type={type}>{children}</ButtonContainer>;
+export const Button = ({ type = "solid", children, ...props }) => {
+  return (
+    <ButtonContainer $type={type} {...props}>
+      {children}
+    </ButtonContainer>
+  );
+};
+
+const buttonType = (type) => {
+  switch (type) {
+    case "solid":
+      return css`
+        background-color: ${({ theme }) => theme.color.mainDarken};
+        color: ${({ theme }) => theme.color.white};
+      `;
+    case "outlined":
+      return css`
+        background-color: ${({ theme }) => theme.color.white};
+        color: ${({ theme }) => theme.color.mainDarken};
+        border: 1px solid ${({ theme }) => theme.color.mainDarken};
+      `;
+  }
 };
 
 const ButtonContainer = styled.button`
@@ -10,9 +30,6 @@ const ButtonContainer = styled.button`
   outline: 0;
   width: auto;
   padding: 12px 16px;
-  background-color: ${(props) => (props.type === "solid" ? "#fff" : "#ff6dd6")};
-  color: ${(props) => (props.type === "solid" ? "#ff6dd6" : "#fff")};
-  border: 1px solid ${(props) => (props.type === "solid" ? "#ff6dd6" : "#ff6dd6")};
   border-radius: 10px;
   font-size: 14px;
   font-style: normal;
@@ -20,4 +37,8 @@ const ButtonContainer = styled.button`
   line-height: 20px;
   font-family: Roboto;
   letter-spacing: 0.25px;
+  ${({ $type }) => buttonType($type)};
+  &:active {
+    opacity: 0.7;
+  }
 `;
