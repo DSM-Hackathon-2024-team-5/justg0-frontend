@@ -74,7 +74,7 @@ function App() {
         </TextInner>
       </Main>
       <ButtonBack>
-        <Button>동의하고 가입하기</Button>
+        <Button onClick={() => window.webkit.messageHandlers.hi.postMessage("hi")}>동의하고 가입하기</Button>
       </ButtonBack>
     </Body>
   );
