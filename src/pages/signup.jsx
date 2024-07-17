@@ -99,8 +99,6 @@ function Signup() {
         </InputContainer>
         <InputContainer id="password">
           <Input type="password" placeholder="비밀번호를 입력해주세요" />
-          <Img $open src="/images/Vector.svg" alt="open" id='open'/>
-          <Img $open src="/images/eye.svg" alt="closed" id='closed'/>
         </InputContainer>
         <InputContainer id="password">
           <Input type="text" placeholder="닉네임을 입력해주세요" />
