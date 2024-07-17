@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BeforeLogo from "../assets/before.svg";
+import BeforeLogo from "/images/before.svg";
 
 export const Back = ({ children }) => {
   return (
