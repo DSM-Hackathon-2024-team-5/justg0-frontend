@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import JustGoPink from "/images/JustGoPink.svg";
 import { Button } from "../components/button";
+import { Link } from "react-router-dom";
 
 const AppContainer = styled.div`
   background-color: #ffffff;
@@ -70,7 +71,9 @@ function Login() {
 
       <Buttons>
         <Button type="solid">로그인</Button>
-        <Button type="outlined">회원가입하러 가기</Button>
+        <Link to="/signup" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Button type="outlined">회원가입하러 가기</Button>
+        </Link>
       </Buttons>
     </AppContainer>
   );

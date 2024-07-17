@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../components/button";
+import { Link } from "react-router-dom";
 
 const AppContainer = styled.div`
   background-color: #ffffff;
@@ -55,7 +56,9 @@ function Signup() {
 
       <Buttons>
         <Button type="solid">가입하기</Button>
-        <Button type="outlined">로그인하러 가기</Button>
+        <Link to="/login" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Button type="outlined">로그인하러 가기</Button>
+        </Link>
       </Buttons>
     </AppContainer>
   );
