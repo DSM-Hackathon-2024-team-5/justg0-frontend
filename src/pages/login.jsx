@@ -1,30 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import JustGoPink from "/images/JustGoPink.svg";
+import { Button } from "../components/button";
 
 const AppContainer = styled.div`
-  background-color: #FFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: flex-start;
   width: 100%;
-  height: 90%
-  padding-left: 20px;
-  padding-top: 10px;
-  margin-bottom: 116px;
+  height: 100vh;
+  padding: 32px 16px;
+  box-sizing: border-box;
 `;
-
-const Img = styled.img`
-  padding-left: 10px;
-`
 
 const Title = styled.div`
   margin-bottom: 62px;
-  margin-right: 65px;
+  ${({ theme }) => theme.font.display};
 `;
 
 const TextField = styled.div`
@@ -33,23 +24,16 @@ const TextField = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
-`;
-
-const InputContainer = styled.div`
-  padding-left: 20px;
-  width: 370px;
-  height: 50px;
-  border-radius: 10px;
-  border: 0.1px solid rgba(0, 0, 0, 0.288);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 `;
 
 const Input = styled.input`
+  box-sizing: border-box;
+  border-radius: 10px;
   border: none;
-  width: 360px;
-  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  width: 100%;
+  padding: 16px;
 
   &:focus {
     outline: none;
@@ -59,52 +43,34 @@ const Input = styled.input`
 const Buttons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin-top: 330px;
-`;
-
-const Button = styled.button`
-  width: 370px;
-  height: 43px;
-  border-radius: 10px;
-  border: 0.1px solid ${props => (props.$primary ? 'rgba(0, 0, 0, 0)' : '#FF6DD6')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  color: ${({theme, $primary}) => ($primary ? theme.color.white : theme.color.mainDarken)};
-  background-color: ${({theme, $primary}) => ($primary ? theme.color.mainDarken : theme.color.white)};
-  font-size: 14px;
-  margin-top: -20px;
-
-  &:hover {
-    cursor: pointer;
-  }
+  gap: 16px;
+  margin-top: auto;
 `;
 
 function Login() {
+  useEffect(() => {
+    // function handleEvent(message) {
+    //   alert("성공");
+    // }
+    // window.addEventListener("message", handleEvent);
+    // return () => window.removeEventListener("message", handleEvent);
+  }, []);
+
   return (
     <AppContainer>
-      <Header>
-        <Img src="/images/navigate_before.svg" width="35" height="35" alt="navigate back" />
-      </Header>
-
-      <Title>
-        <img src="/images/JustGO.svg" alt="JustGO" />
-      </Title>
+      <div style={{ marginTop: 80, marginBottom: 8 }}>
+        <img src={JustGoPink} alt="JustGO" />
+      </div>
+      <Title>로그인</Title>
 
       <TextField>
-        <InputContainer id="email">
-          <Input type="email" placeholder="이메일을 입력해주세요" />
-        </InputContainer>
-        <InputContainer id="password">
-          <Input type="password" placeholder="비밀번호를 입력해주세요" />
-        </InputContainer>
+        <Input type="email" placeholder="이메일을 입력해주세요" />
+        <Input type="password" placeholder="비밀번호를 입력해주세요" />
       </TextField>
 
       <Buttons>
-        <Button $primary type="submit">로그인</Button>
-        <Button type="submit">회원가입하러 가기</Button>
+        <Button type="solid">로그인</Button>
+        <Button type="outlined">회원가입하러 가기</Button>
       </Buttons>
     </AppContainer>
   );
