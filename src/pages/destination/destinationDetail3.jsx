@@ -22,7 +22,7 @@ const DestinationDetail3 = () => {
           textDecoration: "none",
         }}
       >
-        <Button onClick={() => window.webview.detail("success")}>여정 시작하기</Button>
+        <Button onClick={() => window.detail.postMessage("success")}>여정 시작하기</Button>
       </div>
     </Container>
   );

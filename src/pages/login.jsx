@@ -81,7 +81,7 @@ function Login() {
       </TextField>
 
       <Buttons>
-        <Button type="solid" onClick={() => window.webview.login("success")}>
+        <Button type="solid" onClick={() => window.login.postMessage("success")}>
           로그인
         </Button>
         <Link to="/signup" style={{ width: "100%", display: "flex", flexDirection: "column" }}>

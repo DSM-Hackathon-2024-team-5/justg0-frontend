@@ -11,7 +11,7 @@ const Main = () => {
     <Container>
       <TitleField src={JustGo} />
       <ButtonField>
-        <AppleButton onClick={() => window.webview.main("success")}>
+        <AppleButton onClick={() => window.main.postMessage("success")}>
           <AppleLogo src={Apple} />
           <span>애플 계정으로 시작하기</span>
         </AppleButton>
@@ -27,7 +27,7 @@ const Main = () => {
             <WhiteLogin src={login2} />
           </SignUpButton>
         </Link>
-        <GoogleButton onClick={() => window.webview.main("success")}>
+        <GoogleButton onClick={() => window.main.postMessage("success")}>
           <GoogleLogo src={Google} />
           <span>구글 계정으로 시작하기</span>
         </GoogleButton>
