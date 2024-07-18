@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Body = styled.div`
@@ -10,24 +11,10 @@ const Title = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  height: 136px;
 
   img {
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
-  h3 {
-    font-size: 18px;
-    margin: 0;
-    margin-top: 20px;
-    text-align: center;
+    width: 100vw;
   }
 
   p {
@@ -120,23 +107,25 @@ function App() {
       <TripRecord>
         <RecordTitle>여행기록</RecordTitle>
         <br />
-        <Record>
-          <h1>1</h1>
-          <p>
-            <b>
-              전라북도 고창
-              <br />
-              <span>2021.10.11</span>
-            </b>
-          </p>
-          <span id="KM">147.7km</span>
-          <img src="/images/Group13.svg"/>
-        </Record>
+        <Link to="/tripDetail">
+          <Record>
+            <h1>1</h1>
+            <p>
+              <b style={{ whiteSpace: "nowrap" }}>
+                전라북도 고창
+                <br />
+                <span>2021.10.11</span>
+              </b>
+            </p>
+            <span id="KM">147.7km</span>
+            <img src="/images/Group13.svg" />
+          </Record>
+        </Link>
 
         <Record>
           <h1>2</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               통영 한산도
               <br />
               <span>2021.12.1</span>
@@ -149,7 +138,7 @@ function App() {
         <Record>
           <h1>3</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               충청북도 단양
               <br />
               <span>2022.8.13</span>
@@ -162,7 +151,7 @@ function App() {
         <Record>
           <h1>4</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               강원도 고성
               <br />
               <span>2022.9.18</span>
@@ -175,7 +164,7 @@ function App() {
         <Record>
           <h1>5</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               경상북도 문경
               <br />
               <span>2023.5.17</span>
@@ -188,7 +177,7 @@ function App() {
         <Record>
           <h1>6</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               인천 소야도
               <br />
               <span>2024.3.18</span>

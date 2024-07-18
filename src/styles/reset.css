@@ -133,6 +133,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: black;
+}
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
