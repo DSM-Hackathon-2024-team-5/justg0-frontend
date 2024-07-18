@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Body = styled.div`
   background-color: rgb(245, 245, 245);
@@ -7,33 +8,22 @@ const Body = styled.div`
 `;
 
 const Title = styled.div`
-  background-color: white;
-  height: 200px;
   display: flex;
-  flex-direction: column;
-  position: relative;
+  align-items: center;
+  background-color: white;
+  height: 136px;
 
   img {
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
-  h3 {
-    font-size: 18px;
-    margin: 0;
-    margin-top: 20px;
-    text-align: center;
+    width: 100vw;
   }
 
   p {
     font-size: 28px;
     margin-left: 15px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     line-height: 40px;
   }
+  ${({ theme, $bolder }) => $bolder === theme.font.headLine};
 `;
 
 const TripRecord = styled.div`
@@ -105,9 +95,7 @@ function App() {
   return (
     <Body>
       <Title>
-        <img src="/images/Group13.svg" alt="title logo" />
-        <h3><b>지난 여정</b></h3>
-        <p>
+        <p $bolder>
           <b>
             지금까지 <span>1134.8 km</span>
             <br />
@@ -119,23 +107,25 @@ function App() {
       <TripRecord>
         <RecordTitle>여행기록</RecordTitle>
         <br />
-        <Record>
-          <h1>1</h1>
-          <p>
-            <b>
-              전라북도 고창
-              <br />
-              <span>2021.10.11</span>
-            </b>
-          </p>
-          <span id="KM">147.7km</span>
-          <img src="/images/Group13.svg"/>
-        </Record>
+        <Link to="/tripDetail">
+          <Record>
+            <h1>1</h1>
+            <p>
+              <b style={{ whiteSpace: "nowrap" }}>
+                전라북도 고창
+                <br />
+                <span>2021.10.11</span>
+              </b>
+            </p>
+            <span id="KM">147.7km</span>
+            <img src="/images/Group13.svg" />
+          </Record>
+        </Link>
 
         <Record>
           <h1>2</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               통영 한산도
               <br />
               <span>2021.12.1</span>
@@ -148,7 +138,7 @@ function App() {
         <Record>
           <h1>3</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               충청북도 단양
               <br />
               <span>2022.8.13</span>
@@ -161,7 +151,7 @@ function App() {
         <Record>
           <h1>4</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               강원도 고성
               <br />
               <span>2022.9.18</span>
@@ -174,7 +164,7 @@ function App() {
         <Record>
           <h1>5</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               경상북도 문경
               <br />
               <span>2023.5.17</span>
@@ -187,7 +177,7 @@ function App() {
         <Record>
           <h1>6</h1>
           <p>
-            <b>
+            <b style={{ whiteSpace: "nowrap" }}>
               인천 소야도
               <br />
               <span>2024.3.18</span>

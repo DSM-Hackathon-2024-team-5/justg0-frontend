@@ -12,8 +12,7 @@ const DestinationDetail3 = () => {
         <CharacterImage src={Character} alt="character" />
         <Text>그럼, 행운을 빌어요!</Text>
       </Wrapper>
-      <Link
-        to="/"
+      <div
         style={{
           width: "100%",
           display: "flex",
@@ -23,8 +22,8 @@ const DestinationDetail3 = () => {
           textDecoration: "none",
         }}
       >
-        <Button>여정 시작하기</Button>
-      </Link>
+        <Button onClick={() => window.webview.detail("success")}>여정 시작하기</Button>
+      </div>
     </Container>
   );
 };

@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import JustGoPink from "/images/JustGoPink.svg";
 import { Button } from "../components/button";
 import { Link } from "react-router-dom";
+import { useForm } from "../hooks/useForm";
+import { Back } from "../components/back";
 
 const AppContainer = styled.div`
   background-color: #ffffff;
@@ -49,6 +51,8 @@ const Buttons = styled.div`
 `;
 
 function Login() {
+  const { state, onChange } = useForm({ email: "", password: "" });
+
   useEffect(() => {
     // function handleEvent(message) {
     //   alert("성공");
@@ -59,18 +63,27 @@ function Login() {
 
   return (
     <AppContainer>
+      <Back />
       <div style={{ marginTop: 80, marginBottom: 8 }}>
         <img src={JustGoPink} alt="JustGO" />
       </div>
       <Title>로그인</Title>
 
       <TextField>
-        <Input type="email" placeholder="이메일을 입력해주세요" />
-        <Input type="password" placeholder="비밀번호를 입력해주세요" />
+        <Input name="email" type="email" placeholder="이메일을 입력해주세요" onChange={onChange} value={state.email} />
+        <Input
+          name="password"
+          type="password"
+          placeholder="비밀번호를 입력해주세요"
+          onChange={onChange}
+          value={state.password}
+        />
       </TextField>
 
       <Buttons>
-        <Button type="solid">로그인</Button>
+        <Button type="solid" onClick={() => window.webview.login("success")}>
+          로그인
+        </Button>
         <Link to="/signup" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
           <Button type="outlined">회원가입하러 가기</Button>
         </Link>

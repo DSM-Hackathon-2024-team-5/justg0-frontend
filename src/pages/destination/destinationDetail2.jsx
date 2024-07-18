@@ -73,4 +73,5 @@ const KillometerText = styled.span`
   ${({ theme }) => theme.font.display};
   text-align: center;
   margin-top: 100px;
+  animation: ${slideIn} 2s 0s ease-in;
 `;

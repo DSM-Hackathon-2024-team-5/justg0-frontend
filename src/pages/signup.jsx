@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../components/button";
 import { Link } from "react-router-dom";
+import { useForm } from "../hooks/useForm";
+import { useSignUp } from "../apis/auth";
+import { Back } from "../components/back";
 
 const AppContainer = styled.div`
   background-color: #ffffff;
@@ -42,20 +45,40 @@ const Buttons = styled.div`
 `;
 
 function Signup() {
+  const { state, onChange } = useForm({ email: "", password: "", username: "" });
+  const { mutate } = useSignUp();
+
   return (
     <AppContainer>
+      <Back />
       <div style={{ marginTop: 80, marginBottom: 8 }}>
         <img src="/images/Group11.svg" alt="JustGO" />
       </div>
 
       <TextField>
-        <Input type="email" placeholder="이메일을 입력해주세요" />
-        <Input type="password" placeholder="비밀번호를 입력해주세요" />
-        <Input type="text" placeholder="닉네임을 입력해주세요" />
+        <Input name="email" type="email" placeholder="이메일을 입력해주세요" onChange={onChange} value={state.email} />
+        <Input
+          name="password"
+          type="password"
+          placeholder="비밀번호를 입력해주세요"
+          onChange={onChange}
+          value={state.password}
+        />
+        <Input
+          name="username"
+          type="text"
+          placeholder="닉네임을 입력해주세요"
+          onChange={onChange}
+          value={state.username}
+        />
       </TextField>
 
       <Buttons>
-        <Button type="solid">가입하기</Button>
+        <Link to="/term" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Button type="solid" onClick={() => mutate(state)}>
+            가입하기
+          </Button>
+        </Link>
         <Link to="/login" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
           <Button type="outlined">로그인하러 가기</Button>
         </Link>
