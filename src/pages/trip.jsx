@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Body = styled.div`
   background-color: rgb(245, 245, 245);
   margin: 0;
+  font: revert;
 `;
 
 const Title = styled.div`
@@ -30,6 +31,7 @@ const TripRecord = styled.div`
   background-color: white;
   position: relative;
   top: 20px;
+  font: revert;
 `;
 
 const Record = styled.div`
@@ -97,7 +99,7 @@ function App() {
       <Title>
         <p $bolder>
           <b>
-            지금까지 <span>1134.8 km</span>
+            지금까지 <span>1011.8 km</span>
             <br />
             여행했어요!
           </b>
@@ -107,20 +109,18 @@ function App() {
       <TripRecord>
         <RecordTitle>여행기록</RecordTitle>
         <br />
-        <Link to="/tripDetail">
-          <Record>
-            <h1>1</h1>
-            <p>
-              <b style={{ whiteSpace: "nowrap" }}>
-                전라북도 고창
-                <br />
-                <span>2021.10.11</span>
-              </b>
-            </p>
-            <span id="KM">147.7km</span>
-            <img src="/images/Group13.svg" />
-          </Record>
-        </Link>
+        <Record>
+          <h1>1</h1>
+          <p>
+            <b>
+              보문산 보문대
+              <br />
+              <span>2021.10.11</span>
+            </b>
+          </p>
+          <span id="KM">24.7km</span>
+          <img src="/images/Group13.svg"/>
+        </Record>
 
         <Record>
           <h1>2</h1>
