@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import move from "/images/move.svg";
 import heart from "/images/heart.svg";
 import map from "/images/map.svg";
 
+//북위 33~43, 동경 124~132
 const TripDetail = () => {
+  useEffect(() => {
+    const container = document.getElementById("map");
+    const options = { center: new kakao.maps.LatLng(36.3092042093, 127.4225159026) };
+    const kakaoMap = new kakao.maps.Map(container, options);
+
+    var markerPosition = new window.kakao.maps.LatLng(36.3092042093, 127.4225159026);
+
+    var marker = new window.kakao.maps.Marker({
+      position: markerPosition,
+    });
+
+    marker.setMap(kakaoMap);
+  }, []);
+
   return (
     <Container>
       <Head2>
         <Head2Text>24.7km 이동!</Head2Text>
       </Head2>
       <MapField>
-        <Map src={map} />
+        <Map id="map" style={{ width: "100%", height: "100%" }}></Map>
       </MapField>
       <Detail>
         <DetailTitle>
@@ -19,10 +34,10 @@ const TripDetail = () => {
         </DetailTitle>
         <DetailContent>
           <DetailContentText>
-            보문산 보문대는 대전에서 제일가는 산이지만 그 명성은 성심당보다 못하여 무시받지는 않지만 그래도 나쁘지 않은
-            산이다. 보문산 보문대는 대전에서 제일가는 산이지만 그 명성은 성심당보다 못하여 무시받지는 않지만 그래도
-            나쁘지 않은 산이다. 보문산 보문대는 대전에서 제일가는 산이지만 그 명성은 성심당보다 못하여 무시받지는 않지만
-            그래도 나쁘지 않은 산이다.
+            보문산(寶文山)은 대전의 남쪽, 시 중심부에 근접한 해발 457.6m의 산이다. 지금은 둔산 개발, 심지어 노은 개발로
+            대전 중심부라 하기엔 무리지만, "서대전"과 "구도심"이 보문산 자락에 접해있다. 즉 대전의 역사와 오랜 시간 함께
+            한 산이다. 과거 대전 시티즌의 홈구장이었던 한밭종합운동장과 한화 이글스의 홈구장 대전 한화생명 이글스파크가
+            이 근처에 위치해 있다.
           </DetailContentText>
         </DetailContent>
       </Detail>
@@ -56,7 +71,7 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: ${({ theme }) => theme.color.background};
 `;
 
@@ -83,7 +98,7 @@ const MapField = styled.div`
   box-sizing: border-box;
 `;
 
-const Map = styled.img`
+const Map = styled.div`
   width: 100%;
   border-radius: 5px;
 `;
