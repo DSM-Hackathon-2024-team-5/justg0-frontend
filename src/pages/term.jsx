@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../components/button";
+import { Link } from "react-router-dom";
 
 const Body = styled.div`
   margin: 0;
@@ -74,7 +75,9 @@ function App() {
         </TextInner>
       </Main>
       <ButtonBack>
-        <Button onClick={() => window.webview.hi("hi")}>동의하고 가입하기</Button>
+        <Link to="/login" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Button onClick={() => window.webview.hi("hi")}>동의하고 가입하기</Button>
+        </Link>
       </ButtonBack>
     </Body>
   );

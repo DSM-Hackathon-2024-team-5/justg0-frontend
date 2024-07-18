@@ -1,17 +1,23 @@
 import styled from "styled-components";
 import BeforeLogo from "/images/before.svg";
+import { Link } from "react-router-dom";
 
 export const Back = ({ children }) => {
   return (
-    <Container>
-      <Before src={BeforeLogo} />
-      <Text>{children}</Text>
-      <div style={{ width: 32 }}></div>
-    </Container>
+    <Link to="/">
+      <Container>
+        <Before src={BeforeLogo} />
+        <Text>{children}</Text>
+        <div style={{ width: 32 }}></div>
+      </Container>
+    </Link>
   );
 };
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
