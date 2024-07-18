@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Button } from "../components/button";
 import { Slider } from "rsuite";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Start = () => {
   const [value, setValue] = useState(15000);
@@ -49,7 +50,8 @@ const Start = () => {
           })}
         </ButtonWrapper>
       </Wrapper>
-      <div
+      <Link
+        to="/destination/1"
         style={{
           width: "100%",
           display: "flex",
@@ -60,7 +62,7 @@ const Start = () => {
         }}
       >
         <Button>여정 시작하기</Button>
-      </div>
+      </Link>
     </Container>
   );
 };
