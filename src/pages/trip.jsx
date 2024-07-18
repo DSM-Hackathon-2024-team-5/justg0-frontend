@@ -109,18 +109,20 @@ function App() {
       <TripRecord>
         <RecordTitle>여행기록</RecordTitle>
         <br />
-        <Record>
-          <h1>1</h1>
-          <p>
-            <b>
-              보문산 보문대
-              <br />
-              <span>2021.10.11</span>
-            </b>
-          </p>
-          <span id="KM">24.7km</span>
-          <img src="/images/Group13.svg"/>
-        </Record>
+        <Link to="/tripDetail">
+          <Record>
+            <h1>1</h1>
+            <p>
+              <b>
+                보문산 보문대
+                <br />
+                <span>2021.10.11</span>
+              </b>
+            </p>
+            <span id="KM">24.7km</span>
+            <img src="/images/Group13.svg" />
+          </Record>
+        </Link>
 
         <Record>
           <h1>2</h1>
