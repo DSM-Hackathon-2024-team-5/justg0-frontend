@@ -10,10 +10,24 @@ const Title = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
-  height: 136px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
   img {
-    width: 100vw;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
   }
 
   p {
@@ -75,7 +89,10 @@ const Record = styled.div`
   }
 
   img {
-    /* 이미지 스타일이 여기에 추가될 수 있습니다 */
+    transform: rotate(180deg);
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
   }
 `;
 
@@ -93,7 +110,7 @@ function App() {
       <Title>
         <p $bolder>
           <b>
-            지금까지 <span>1234.3km</span>
+            지금까지 <span>1134.8 km</span>
             <br />
             여행했어요!
           </b>
@@ -107,78 +124,78 @@ function App() {
           <h1>1</h1>
           <p>
             <b>
-              보문산 보문대
+              전라북도 고창
               <br />
-              <span>2008.10.11</span>
+              <span>2021.10.11</span>
             </b>
           </p>
-          <span id="KM">24.3km</span>
-          <img src="" alt="" />
+          <span id="KM">147.7km</span>
+          <img src="/images/Group13.svg"/>
         </Record>
 
         <Record>
           <h1>2</h1>
           <p>
             <b>
-              넘어 계룡
+              통영 한산도
               <br />
-              <span>2008.10.11</span>
+              <span>2021.12.1</span>
             </b>
           </p>
-          <span id="KM">315.7km</span>
-          <img src="" alt="" />
+          <span id="KM">255.6km</span>
+          <img src="/images/Group13.svg" />
         </Record>
 
         <Record>
           <h1>3</h1>
           <p>
             <b>
-              계룡을 넘어
+              충청북도 단양
               <br />
-              <span>2008.10.11</span>
+              <span>2022.8.13</span>
             </b>
           </p>
-          <span id="KM">315.7km</span>
-          <img src="" alt="" />
+          <span id="KM">168.4km</span>
+          <img src="/images/Group13.svg" />
         </Record>
 
         <Record>
           <h1>4</h1>
           <p>
             <b>
-              계룡을 넘어
+              강원도 고성
               <br />
-              <span>2008.10.11</span>
+              <span>2022.9.18</span>
             </b>
           </p>
-          <span id="KM">315.7km</span>
-          <img src="" alt="" />
+          <span id="KM">194.7km</span>
+          <img src="/images/Group13.svg" />
         </Record>
 
         <Record>
           <h1>5</h1>
           <p>
             <b>
-              계룡을 넘어
+              경상북도 문경
               <br />
-              <span>2008.10.11</span>
+              <span>2023.5.17</span>
             </b>
           </p>
-          <span id="KM">315.7km</span>
-          <img src="" alt="" />
+          <span id="KM">128.2km</span>
+          <img src="/images/Group13.svg" />
         </Record>
 
         <Record>
           <h1>6</h1>
           <p>
             <b>
-              계룡을 넘어
+              인천 소야도
               <br />
-              <span>2008.10.11</span>
+              <span>2024.3.18</span>
             </b>
           </p>
-          <span id="KM">315.7km</span>
-          <img src="" alt="" />
+          <span id="KM">240.2km</span>
+          <img src="/images/Group13.svg" />
         </Record>
       </TripRecord>
     </Body>
