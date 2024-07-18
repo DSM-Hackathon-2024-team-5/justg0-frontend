@@ -76,7 +76,7 @@ function App() {
       </Main>
       <ButtonBack>
         <Link to="/login" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
-          <Button onClick={() => window.webview.hi("hi")}>동의하고 가입하기</Button>
+          <Button onClick={() => window.hi.postMessage("hi")}>동의하고 가입하기</Button>
         </Link>
       </ButtonBack>
     </Body>
