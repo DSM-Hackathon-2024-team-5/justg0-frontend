@@ -1,31 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { Button } from "../components/button";
+import { Link } from "react-router-dom";
 
 const AppContainer = styled.div`
-  background-color: #FFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  height: 90%
-  padding-left: 20px;
-  padding-top: 10px;
-  margin-bottom: 116px;
-`;
-
-const Img = styled.img`
-  padding-right: 10px;
-  left-padding: ${props => (props.$open ? '50px' : '100px')};
-`
-
-const Title = styled.div`
-  margin-bottom: 62px;
-  margin-right: 65px;
+  height: 100vh;
+  padding: 32px 16px;
+  box-sizing: border-box;
 `;
 
 const TextField = styled.div`
@@ -36,21 +22,13 @@ const TextField = styled.div`
   margin-bottom: 20px;
 `;
 
-const InputContainer = styled.div`
-  padding-left: 20px;
-  width: 370px;
-  height: 50px;
-  border-radius: 10px;
-  border: 0.1px solid rgba(0, 0, 0, 0.288);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Input = styled.input`
+  box-sizing: border-box;
+  border-radius: 10px;
   border: none;
-  width: 360px;
-  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  width: 100%;
+  padding: 16px;
 
   &:focus {
     outline: none;
@@ -60,54 +38,27 @@ const Input = styled.input`
 const Buttons = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-top: 270px;
-`;
-
-const Button = styled.button`
-  width: 370px;
-  height: 43px;
-  border-radius: 10px;
-  border: 0.1px solid ${props => (props.$primary ? 'rgba(0, 0, 0, 0)' : '#FF6DD6')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  color: ${({theme, $primary}) => ($primary ? theme.color.white : theme.color.mainDarken)};
-  background-color: ${({theme, $primary}) => ($primary ? theme.color.mainDarken : theme.color.white)};
-  margin-top: -40px;
-
-  &:hover {
-    cursor: pointer;
-  }
+  gap: 16px;
 `;
 
 function Signup() {
   return (
     <AppContainer>
-      <Header>
-        <Img src="/images/navigate_before.svg" width="35" height="35" alt="navigate back" />
-      </Header>
-
-      <Title>
+      <div style={{ marginTop: 80, marginBottom: 8 }}>
         <img src="/images/Group11.svg" alt="JustGO" />
-      </Title>
+      </div>
 
       <TextField>
-        <InputContainer id="email">
-          <Input type="email" placeholder="이메일을 입력해주세요" />
-        </InputContainer>
-        <InputContainer id="password">
-          <Input type="password" placeholder="비밀번호를 입력해주세요" />
-        </InputContainer>
-        <InputContainer id="password">
-          <Input type="text" placeholder="닉네임을 입력해주세요" />
-        </InputContainer>
+        <Input type="email" placeholder="이메일을 입력해주세요" />
+        <Input type="password" placeholder="비밀번호를 입력해주세요" />
+        <Input type="text" placeholder="닉네임을 입력해주세요" />
       </TextField>
 
       <Buttons>
-        <Button $primary type="submit">가입하기</Button>
-        <Button type="submit" id='login'>로그인하러 가기</Button>
+        <Button type="solid">가입하기</Button>
+        <Link to="/login" style={{ width: "100%", display: "flex", flexDirection: "column" }}>
+          <Button type="outlined">로그인하러 가기</Button>
+        </Link>
       </Buttons>
     </AppContainer>
   );

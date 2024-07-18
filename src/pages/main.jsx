@@ -4,31 +4,34 @@ import Apple from "/images/apple.svg";
 import login from "/images/login.svg";
 import login2 from "/images/whiteLogin.svg";
 import Google from "/images/google.svg";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
     <Container>
       <TitleField src={JustGo} />
-      <Buttons>
+      <ButtonField>
         <AppleButton>
           <AppleLogo src={Apple} />
-          애플 계정으로 시작하기
+          <span>애플 계정으로 시작하기</span>
         </AppleButton>
-        <LoginButton>
-          로그인
-          <LoginLogo src={login} />
-        </LoginButton>
-      </Buttons>
-      <Buttons2>
-        <SignUpButton>
-          가입하기
-          <WhiteLogin src={login2} />
-        </SignUpButton>
+        <Link to="/login">
+          <LoginButton>
+            <span>로그인</span>
+            <LoginLogo src={login} />
+          </LoginButton>
+        </Link>
+        <Link to="/signup">
+          <SignUpButton>
+            <span>가입하기</span>
+            <WhiteLogin src={login2} />
+          </SignUpButton>
+        </Link>
         <GoogleButton>
           <GoogleLogo src={Google} />
-          구글 계정으로 시작하기
+          <span>구글 계정으로 시작하기</span>
         </GoogleButton>
-      </Buttons2>
+      </ButtonField>
     </Container>
   );
 };
@@ -43,104 +46,100 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 48px 16px;
+  box-sizing: border-box;
 `;
 
 const TitleField = styled.img`
   height: 15%;
   width: 80%;
-  margin-left: 4%;
-  margin-top: 33%;
+  margin-top: 100px;
 `;
 
-const Buttons = styled.div`
-  height: 20%;
-  width: 100%;
+const ButtonField = styled.div`
+  margin-top: auto;
+  height: 112px;
+  position: relative;
   display: flex;
-  margin-top: 99%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 `;
 
 const AppleButton = styled.button`
-  width: 55%;
-  height: 30%;
-  margin-left: 4%;
+  width: auto;
+  padding: 12px 16px;
   border-radius: 10px;
   border: none;
-  margin-top: 12%;
+  font-size: 0.9em;
   font-size: 0.9em;
   display: flex;
   align-items: center;
-  justify-content: end;
-  padding-right: 4%;
+  text-align: center;
+  gap: 8px;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
 const AppleLogo = styled.img`
-  width: 10%;
-  margin-right: 8%;
+  width: 16px;
+  height: 16px;
 `;
 
 const LoginButton = styled.button`
-  width: 27%;
-  height: 30%;
-  margin-top: 12%;
-  margin-left: 4%;
+  width: auto;
   border-radius: 10px;
+  padding: 12px 16px;
   border: none;
   font-size: 0.9em;
   display: flex;
   align-items: center;
-  padding-left: 5%;
+  gap: 8px;
+  text-align: center;
   cursor: pointer;
 `;
 
 const LoginLogo = styled.img`
-  width: 30%;
-  height: 30%;
-  margin-left: 10%;
-`;
-
-const Buttons2 = styled.div`
-  height: 10%;
-  width: 100%;
-  margin-top: -20%;
-  display: flex;
-  align-items: center;
+  width: 16px;
+  height: 16px;
 `;
 
 const SignUpButton = styled.button`
   background-color: #ff6dd6;
   color: white;
-  width: 30%;
-  height: 57%;
-  margin-top: 1%;
-  margin-left: 4%;
+  width: auto;
+  padding: 12px 16px;
   border-radius: 10px;
   border: none;
   font-size: 0.9em;
   display: flex;
   align-items: center;
-  padding-left: 4%;
   font-size: 0.9em;
   cursor: pointer;
+  white-space: nowrap;
+  gap: 16px;
 `;
 
 const WhiteLogin = styled.img`
-  margin-left: 18%;
+  width: 16px;
+  height: 16px;
 `;
 
 const GoogleButton = styled.button`
-  width: 56%;
-  height: 57%;
-  margin-top: 1%;
+  width: auto;
+  padding: 12px 16px;
   border-radius: 10px;
   border: none;
-  margin-left: 3%;
   text-align: center;
   font-size: 0.9em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
 `;
 
 const GoogleLogo = styled.img`
-  margin-right: 9%;
-  margin-bottom: -2%;
+  width: 16px;
+  height: 16px;
 `;
